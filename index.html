@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StackCalc | Expression Evaluator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="logo">S<span>+</span></div>
+      <p class="eyebrow">DATA STRUCTURES & ALGORITHMS · C PROJECT</p>
+      <h1>Expression <span>Evaluator</span></h1>
+      <p class="subtitle">A simple calculator that demonstrates how stacks evaluate arithmetic expressions.</p>
+    </header>
+
+    <section class="workspace" aria-label="Expression calculator">
+      <div class="calculator card">
+        <div class="section-heading">
+          <div><p class="mini-label">CALCULATOR</p><h2>Try an expression</h2></div>
+          <span class="status"><i></i> Ready</span>
+        </div>
+        <label for="expression">Enter an arithmetic expression</label>
+        <input id="expression" type="text" placeholder="e.g. (5 + 3) * 2" autocomplete="off" spellcheck="false" />
+        <div class="examples">
+          <span>Try:</span>
+          <button class="example" data-expression="5 + 3">5 + 3</button>
+          <button class="example" data-expression="2 + 3 * 4">2 + 3 * 4</button>
+          <button class="example" data-expression="(5 + 3) * 2">(5 + 3) * 2</button>
+        </div>
+        <div class="keypad" aria-label="Calculator keys">
+          <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button><button class="operator" data-key="/">÷</button>
+          <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button><button class="operator" data-key="*">×</button>
+          <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button class="operator" data-key="-">−</button>
+          <button data-key="0">0</button><button data-key=".">.</button><button data-key="(">(</button><button class="operator" data-key="+">+</button>
+          <button data-key=")">)</button><button class="muted" id="clear">Clear</button><button class="muted" id="backspace">⌫</button><button class="equals" id="evaluate">Evaluate ↗</button>
+        </div>
+        <div id="result" class="result" role="status" aria-live="polite">
+          <span class="result-label">RESULT</span><strong>—</strong><small>Your answer will appear here.</small>
+        </div>
+      </div>
+
+      <aside class="side-column">
+        <section class="card stack-card">
+          <p class="mini-label">HOW IT WORKS</p><h2>Stack in action</h2>
+          <p class="small-copy">Stacks follow <strong>LIFO</strong> — Last In, First Out. Operators are handled according to precedence and parentheses.</p>
+          <div class="stack-visual" id="stackVisual"><div class="stack-empty">Evaluate an expression to see the stack steps.</div></div>
+          <div class="stack-legend"><span><i class="dot number-dot"></i> Values</span><span><i class="dot operator-dot"></i> Operators</span></div>
+        </section>
+        <section class="card concepts-card">
+          <p class="mini-label">DSA CONCEPTS</p>
+          <div class="concept"><span class="concept-icon">↥</span><div><strong>Push</strong><p>Add an item to the top of a stack.</p></div></div>
+          <div class="concept"><span class="concept-icon">↧</span><div><strong>Pop</strong><p>Remove the top item from a stack.</p></div></div>
+          <div class="concept"><span class="concept-icon">⌁</span><div><strong>Precedence</strong><p>Multiplication happens before addition.</p></div></div>
+        </section>
+      </aside>
+    </section>
+    <section class="info-grid">
+      <article class="info-card"><span class="number">01</span><h3>Read</h3><p>Read the expression from left to right.</p></article>
+      <article class="info-card"><span class="number">02</span><h3>Use stacks</h3><p>Store numbers and operators while processing the expression.</p></article>
+      <article class="info-card"><span class="number">03</span><h3>Calculate</h3><p>Apply operators in the correct order and show the result.</p></article>
+    </section>
+    <footer><span>StackCalc · DSA Mini Project</span><span>Built for learning C & stacks</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
